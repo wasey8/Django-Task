@@ -1,31 +1,33 @@
-Django Product API Project
+# Django Product API Project
+
 This project is a Django-based backend system designed to manage and expose product-related data via REST APIs.
 
-🚀 Setup Instructions
-Clone the repository:
+---
 
-bash
-Copy
-Edit
+## 🚀 Setup Instructions
+
+### Clone the repository:
+```bash
 git clone https://github.com/yourusername/yourproject.git
 cd yourproject
-Install dependencies:
+```
 
-bash
-Copy
-Edit
+### Install dependencies:
+```bash
 pip install -r requirements.txt
-Run migrations and start server:
+```
 
-bash
-Copy
-Edit
+### Run migrations and start the server:
+```bash
 python manage.py migrate
 python manage.py runserver
-🧩 Project Structure
-markdown
-Copy
-Edit
+```
+
+---
+
+## 🧩 Project Structure
+
+```
 project/
 ├── manage.py
 ├── db.sqlite3
@@ -37,88 +39,92 @@ project/
     ├── tasks.py
     ├── tests.py
     └── views.py
-🌐 API Endpoints
-Endpoint	Method	Description
-/api/products/	GET	List all products
-/api/products/<id>/	GET	Retrieve a single product
-/api/products/	POST	Create a new product
+```
 
-(more endpoints depending on your views.py)
+---
 
-🛠️ Database Schema (simplified)
-Product
+## 🌐 API Endpoints
 
-id: Integer (PK)
+| Endpoint              | Method | Description               |
+|-----------------------|--------|---------------------------|
+| `/api/products/`      | GET    | List all products         |
+| `/api/products/<id>/` | GET    | Retrieve a single product |
+| `/api/products/`      | POST   | Create a new product      |
 
-name: CharField
+> More endpoints may exist depending on `views.py`.
 
-description: TextField
+---
 
-price: DecimalField
+## 🛠️ Database Schema (Simplified)
 
-created_at: DateTimeField
+### Product Model
 
-🏛 Architectural Overview
-Framework: Django 4.x
+- `id`: Integer (Primary Key)  
+- `name`: CharField  
+- `description`: TextField  
+- `price`: DecimalField  
+- `created_at`: DateTimeField  
 
-API: Django REST Framework
+---
 
-DB: SQLite (can be replaced with PostgreSQL/MySQL)
+## 🏛 Architectural Overview
 
-Async Tasks: Celery (detected in tasks.py)
+- **Framework**: Django 4.x  
+- **API**: Django REST Framework  
+- **Database**: SQLite (can be replaced with PostgreSQL/MySQL)  
+- **Async Tasks**: Celery (used in `tasks.py`)  
+- **Containerization**: Docker + Docker Compose  
 
-Containerization: Docker and Docker Compose
+---
 
-📋 Code Review Checklist for Junior Developers
-✅ API Endpoint Design
-Are URLs RESTful and consistent?
+## 📋 Code Review Checklist for Junior Developers
 
-Are serializers used for input/output validation?
+### ✅ API Endpoint Design
 
-Is API documentation (e.g., docstrings or Swagger) present?
+- Are URLs RESTful and consistent?  
+- Are serializers used for input/output validation?  
+- Is API documentation (e.g., docstrings or Swagger) present?  
 
-✅ Database Optimization
-Are select_related and prefetch_related used where appropriate?
+### ✅ Database Optimization
 
-Are there any N+1 query issues?
+- Are `select_related` and `prefetch_related` used where appropriate?  
+- Are there any N+1 query issues?  
+- Are indexes defined on frequently filtered fields?  
 
-Are indexes defined on frequently filtered fields?
+### ✅ Django Best Practices
 
-✅ Django Best Practices
-Are class-based views used when reusable patterns are needed?
+- Are class-based views used where reusable patterns exist?  
+- Are third-party packages like DRF used effectively?  
+- Is the `admin.py` customized for better usability?  
 
-Are third-party packages like DRF used properly (e.g., pagination, permissions)?
+---
 
-Is the admin.py customized for better admin usability?
+## 👶 Onboarding Plan for Junior Developer
 
-👶 Onboarding Plan for Junior Developer
-Day 1–2
+**Day 1–2**
 
-Set up the project locally using the README.
+- Set up the project locally using the README  
+- Explore folder structure and key modules (models, serializers, views)  
 
-Explore folder structure and key modules (models, serializers, views).
+**Day 3–5**
 
-Day 3–5
+- Walk through one API flow from request to response  
+- Run the test suite and review sample test cases  
 
-Walk through one API flow from request to response.
+**Week 2**
 
-Run the test suite and review sample test cases.
+- Implement a simple feature or bug fix with a code review  
+- Write one or two unit tests  
+- Join sprint planning and standups to understand the team workflow  
 
-Week 2
+**Ongoing**
 
-Implement a simple feature or bug fix with code review.
+- Participate in peer code reviews using the checklist above  
+- Regularly sync with a mentor or lead developer  
 
-Write one or two test cases.
+---
 
-Join sprint planning and standups to understand team workflow.
+## 📦 Deployment Notes
 
-Ongoing
-
-Participate in peer reviews using the checklist above.
-
-Regularly sync with mentor/developer lead.
-
-📦 Deployment Notes
-Use the included Dockerfile and docker-compose.yml for local containerized development.
-
-Ensure environment variables are configured securely in production.
+- Use the provided `Dockerfile` and `docker-compose.yml` for containerized development.  
+- Ensure production environment variables (e.g., secrets, DB settings) are securely managed.
