@@ -8,8 +8,8 @@ This project is a Django-based backend system designed to manage and expose prod
 
 ### Clone the repository:
 ```bash
-git clone https://github.com/yourusername/yourproject.git
-cd yourproject
+git clone https://github.com/yourusername/project.git
+cd project
 ```
 
 ### Install dependencies:
